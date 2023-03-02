@@ -62,7 +62,7 @@ jobs:
           token: ${{ secrets.TOKEN }}
 
       - name: setup git config
-        run: /
+        run: |
           git config --global user.email "minhthien@gmail.com"
           git config --glocal user.name "ThienNguyen2207"
           echo ${{ github.sha }}
