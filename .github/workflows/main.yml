@@ -55,11 +55,11 @@ jobs:
     runs-on: [ self-hosted, runnerlab, develop ]
     needs: ['build_dev','build_and_push_image']
     steps:
-      - uses: action/checkout@3
+      - uses: action/checkout@v3
         with:
           repository: ThienNguyen2207/devopsrepo 
           ref: "main"
-          token: ${{secrets.TOKEN}}
+          token: ${{ secrets.TOKEN }}
 
       - name: setup git config
         run: /
