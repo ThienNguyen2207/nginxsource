@@ -68,7 +68,7 @@ jobs:
           echo ${{ github.sha }}
           pwd
           ls -al 
-          sed -ri  "s/^(\s*)(repository\s*:\s*nginx\s*$)/\1repository:(\s)dockerminhthien2207\/nginximages/g" nginxapp/dev-values.yaml
+          sed -ri  "s/^(\s*)(repository\s*:\s*nginx\s*$)/\1repository:(\s)dockerminhthien2207\/nginximages/g" nginxapp/dev_values.yaml
           git add -A
           git commit -am " update images"
       
