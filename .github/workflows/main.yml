@@ -46,14 +46,14 @@ jobs:
           tags: /
           ThienNguyen2207/nginxsource:${{ github.sha }}
           ghcr.io/ThienNguyen2207/nginxsource:${{ github.sha }}
-          push: ${{ github.ref == 'refs/heads/master' }}
+          push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
   update-manifest-stage_argocd
     runs-on: [ self-hosted, runnerlab, develop ]
-    needs: ['build_and_push_image']
+    needs: ['build_dev','build_and_push_image']
     steps:
       - uses: action/checkout@3
         with:
@@ -66,7 +66,7 @@ jobs:
         git config --global user.email "minhthien@gmail.com"
         git config --glocal user.name "ThienNguyen2207"
         echo ${{ github.sha }}
-        sed -i  "s#${{ github.actor }}.*#${{ github.actor }}/gitops01:${{ github.sha }}#g" values.yaml
+        sed -i  "s#${{ github.actor }}.*#${{ github.actor }}/gitopsminu:${{ github.sha }}#g" /values.yaml
         git add -A
         git commit -am " update images"
       
