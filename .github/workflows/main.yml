@@ -63,8 +63,8 @@ jobs:
 
       - name: setup git config
         run: |
-          git config --global user.email "minhthien@gmail.com"
-          git config --glocal user.name "ThienNguyen2207"
+          git config --global user.email "minhthien.nguyen2207@gmail.com"
+          git config --global user.name "ThienNguyen2207"
           echo ${{ github.sha }}
           sed -ri  "s/^(\s*)(repository\s*:\s*nginx\s*$)/\1repository:(\s)dockerminhthien2207\/nginximages/g" nginxapp/dev-values.yaml
           git add -A
