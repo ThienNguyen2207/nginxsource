@@ -66,9 +66,9 @@ jobs:
           git config --global user.email "minhthien@gmail.com"
           git config --glocal user.name "ThienNguyen2207"
           echo ${{ github.sha }}
-          sed -i  "s#${{ github.actor }}.*#${{ github.actor }}/gitopsminu:${{ github.sha }}#g" /values.yaml
+          sed -ri  's/^(\s*)(repository\s*:\s*nginx\s*$)/\1repository: dockerminhthien2207\/nginximages/g' nginxapp/dev-values.yaml
           git add -A
           git commit -am " update images"
       
-      - name: push origin master
+      - name: push origin main
         run: git push origin main
