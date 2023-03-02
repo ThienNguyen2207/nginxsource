@@ -46,8 +46,9 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USER }}/nginximages:${{ github.sha }}
             ghcr.io/${{ secrets.DOCKER_USER }}/nginximages:${{ github.sha }}
-          push: ${{ github.ref == 'refs/heads/main' }}
-
+          #push: ${{ github.ref == 'refs/heads/main' }}
+          push: true
+          
       - name: image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
