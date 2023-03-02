@@ -44,8 +44,8 @@ jobs:
         with:
           context: ./
           tags: /
-          ThienNguyen2207/nginxsource:${{ github.sha }}
-          ghcr.io/ThienNguyen2207/nginxsource:${{ github.sha }}
+            ThienNguyen2207/nginxsource:${{ github.sha }}
+            ghcr.io/ThienNguyen2207/nginxsource:${{ github.sha }}
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: image digest
