@@ -6,13 +6,13 @@ on:
       - main
 
 jobs:
-  build_dev:
-    runs-on: [ self-hosted, runnerlab, develop ]
+  # build_dev:
+  #   runs-on: [ self-hosted, runnerlab, develop ]
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
+  #   # Steps represent a sequence of tasks that will be executed as part of the job
+  #   steps:
+  #     - name: Check out code
+  #       uses: actions/checkout@v3
 
   build_and_push_image:
     name: build docker images and push to repository
@@ -55,9 +55,9 @@ jobs:
     runs-on: [ self-hosted, runnerlab, develop ]
     needs: ['build_dev','build_and_push_image']
     steps:
-      - uses: action/checkout@v3
+      - uses: actions/checkout@v3
         with:
-          repository: devopsrepo 
+          repository: ThienNguyen2207/devopsrepo 
           ref: "main"
           token: ${{ secrets.TOKEN }}
 
