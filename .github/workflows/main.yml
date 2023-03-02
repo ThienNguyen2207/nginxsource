@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./
-          tags: /
+          tags: |
             ${{ secrets.DOCKER_USER }}/nginximages:${{ github.sha }}
             ghcr.io/${{ secrets.DOCKER_USER }}/nginximages:${{ github.sha }}
           push: ${{ github.ref == 'refs/heads/main' }}
