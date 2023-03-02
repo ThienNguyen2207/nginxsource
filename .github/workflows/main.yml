@@ -51,7 +51,7 @@ jobs:
       - name: image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
-  update-manifest-stage_argocd
+  update-manifest-stage_argocd:
     runs-on: [ self-hosted, runnerlab, develop ]
     needs: ['build_dev','build_and_push_image']
     steps:
