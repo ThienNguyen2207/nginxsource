@@ -44,8 +44,8 @@ jobs:
         with:
           context: ./
           tags: /
-            dockerminhthien2207/nginximages:${{ github.sha }}
-#            ghcr.io/dockerminhthien2207/nginximages:${{ github.sha }}
+            ${{ secrets.DOCKER_USER }}/nginximages:${{ github.sha }}
+            ghcr.io/${{ secrets.DOCKER_USER }}/nginximages:${{ github.sha }}
           push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: image digest
