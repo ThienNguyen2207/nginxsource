@@ -67,8 +67,9 @@ jobs:
           git config --global user.name "ThienNguyen2207"
           echo ${{ github.sha }}
           pwd
-          ls -al 
-          sed -ri  "s/^(\s*)(tag\s*:\s*\".*"$)/\1tag: \"${{ github.sha }}\"/g" nginxapp/dev_values.yaml
+          ls -al
+          sed -ri  "s/^(\s*)tag\s*:\s*\".*\"/\1tag: \"${{ github.sha }}\"/g"
+
           git add -A
           git commit -am " update images"
       
