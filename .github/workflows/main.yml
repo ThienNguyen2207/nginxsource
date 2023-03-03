@@ -68,7 +68,7 @@ jobs:
           echo ${{ github.sha }}
           pwd
           ls -al
-          sed -ri  "s/^(\s*)tag\s*:\s*\".*\"/\1tag: \"${{ github.sha }}\"/g"
+          sed -ri  "s/^(\s*)tag\s*:\s*\".*\"/\1tag: \"${{ github.sha }}\"/g" nginxapp/dev_values.yaml
 
           git add -A
           git commit -am " update images"
